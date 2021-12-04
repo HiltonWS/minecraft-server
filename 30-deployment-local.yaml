@@ -32,11 +32,11 @@ spec:
           - name:  EULA
             value: 'TRUE'
           - name: MOTD
-            value: Hilton Network AoF4 1.0.1
+            value: Hilton Network AoF4 1.1.1
           - name: TYPE
             value: CURSEFORGE
           - name: CF_SERVER_MOD
-            value: AllofFabric4Server-1.0.1.zip
+            value: AllofFabric4Server-1.1.1.zip
           - name: MEMORY
             value: " "
           - name: JVM_XX_OPTS
