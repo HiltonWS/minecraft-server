@@ -6,9 +6,11 @@ metadata:
   labels:
     app: minecraft-server
 spec:
-  type: NodePort
   ports:
     - port: 25565
-      nodePort: 30565
+      targetPort: 25565
+      name: minecraft-port
+  externalIPs:
+   - 10.0.0.101
   selector:
     app: minecraft-server
