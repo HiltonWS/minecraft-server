@@ -10,6 +10,12 @@ spec:
     - port: 25565
       targetPort: 25565
       name: minecraft-port
+    - port: 80
+      targetPort: 80
+      name: http
+    - port: 446
+      targetPort: 446
+      name: https
   externalIPs:
    - 10.0.0.101
   selector:

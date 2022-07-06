@@ -25,22 +25,24 @@ spec:
         image: itzg/minecraft-server:latest
         resources:
           limits:
-            memory: 7Gi
+            memory: 6Gi
+            cpu: 3
           requests:
             memory: 5Gi
+            cpu: 2
         env:
           - name:  EULA
             value: 'TRUE'
           - name: MOTD
-            value: Hilton Network AoF5 1.2.3
+            value: Hilton Network AoF5 1.3.0
           - name: TYPE
             value: CURSEFORGE
           - name: CF_SERVER_MOD
-            value: All-of-Fabric-5-Server-1.2.3.zip
+            value: All-of-Fabric-5-Server-1.3.0.zip 
           - name: MEMORY
             value: " "
           - name: JVM_XX_OPTS
-            value: "-XX:MaxRAMPercentage=70"
+            value: "XX:+AggressiveOpts -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+ParallelRefProcEnabled -XX:+PerfDisableSharedMem -XX:+UseCompressedOops -XX:-UsePerfData -XX:MaxGCPauseMillis=200 -XX:ParallelGCThreads=4 -XX:ConcGCThreads=2 -XX:+UseG1GC -XX:InitiatingHeapOccupancyPercent=50 -XX:G1HeapRegionSize=1 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=8 -XX:MaxRAMPercentage=90"
         ports:
         - containerPort: 25565
           name: minecraft
