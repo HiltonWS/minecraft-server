@@ -25,7 +25,7 @@ spec:
         image: itzg/minecraft-server:latest
         resources:
           limits:
-            memory: 6Gi
+            memory: 5Gi
             cpu: 3
           requests:
             memory: 5Gi
@@ -34,11 +34,11 @@ spec:
           - name:  EULA
             value: 'TRUE'
           - name: MOTD
-            value: Hilton Network AoF5 1.3.0
+            value: Hilton Network AoF5 1.5.1
           - name: TYPE
             value: CURSEFORGE
           - name: CF_SERVER_MOD
-            value: All-of-Fabric-5-Server-1.3.0.zip 
+            value: All-of-Fabric-5-Server-1.5.1.zip 
           - name: MEMORY
             value: " "
           - name: JVM_XX_OPTS
@@ -49,3 +49,7 @@ spec:
         volumeMounts:
           - name: minecraft-data
             mountPath:  /data
+      dnsPolicy: "None"
+      dnsConfig:
+        nameservers:
+          - 1.1.1.1
