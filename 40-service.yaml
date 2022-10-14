@@ -17,6 +17,6 @@ spec:
       targetPort: 446
       name: https
   externalIPs:
-   - 10.0.0.102
+   - 10.0.0.101
   selector:
     app: minecraft-server

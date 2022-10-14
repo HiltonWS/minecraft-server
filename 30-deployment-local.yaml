@@ -38,7 +38,7 @@ spec:
           - name: TYPE
             value: CURSEFORGE
           - name: CF_SERVER_MOD
-            value: All-of-Fabric-5-Server-1.5.1.zip 
+            value: All-of-Fabric-5-Server-1.5.1.zip
           - name: MEMORY
             value: " "
           - name: JVM_XX_OPTS
