@@ -16,33 +16,34 @@ spec:
       labels:
         app: minecraft-server
     spec:
+      hostNetwork: true
       volumes:
       - name: minecraft-data
         persistentVolumeClaim:
           claimName: minecraft-data-pvc
       containers:
       - name: minecraft-server
-        image: itzg/minecraft-server:latest
+        image: itzg/minecraft-server:java17
         resources:
           limits:
-            memory: 5Gi
+            memory: 6G
             cpu: 3
           requests:
-            memory: 5Gi
+            memory: 6G
             cpu: 2
         env:
           - name:  EULA
             value: 'TRUE'
           - name: MOTD
-            value: Hilton Network AoF5 1.5.1
+            value: Hilton Network ATM8 1.0.7
           - name: TYPE
-            value: CURSEFORGE
-          - name: CF_SERVER_MOD
-            value: All-of-Fabric-5-Server-1.5.1.zip
+            value: FORGE
+          - name: FORGE_VERSION
+            value: 43.1.55
+          - name: VERSION
+            value: 1.19.2
           - name: MEMORY
-            value: " "
-          - name: JVM_XX_OPTS
-            value: "XX:+AggressiveOpts -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+ParallelRefProcEnabled -XX:+PerfDisableSharedMem -XX:+UseCompressedOops -XX:-UsePerfData -XX:MaxGCPauseMillis=200 -XX:ParallelGCThreads=4 -XX:ConcGCThreads=2 -XX:+UseG1GC -XX:InitiatingHeapOccupancyPercent=50 -XX:G1HeapRegionSize=1 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=8 -XX:MaxRAMPercentage=90"
+            value: "5G"
         ports:
         - containerPort: 25565
           name: minecraft
